@@ -15,7 +15,9 @@ LG - 1200px and greater
 ## Margins & Padding
 
 ###### Class Structure
+```
 [declaration] + [modifier] + [screen size] + [value]
+```
 
 ###### Example: 
 
@@ -43,7 +45,9 @@ class=”p-top-xs-4”
 
 ## Text Alignment
 **Example:**
+```
 	class=”left-sm”
+```
 
 ###### Output:
 ```
@@ -198,6 +202,7 @@ class=”p-top-xs-1  p-top-sm-2  p-right-xs-1  p-right-sm-2  p-bottom-xs-1”
 ```
 
 **Multiple Types of Helpers, Stacking Example**
+
 Declare in the same order we declare CSS: alignment & display, box model, appearance.
 ```
 class=”float-xs show-xs p-top-xs-2 center-xs”
