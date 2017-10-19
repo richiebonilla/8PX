@@ -68,7 +68,7 @@ class=”p-top-xs-4”
 
 ###### Output:
 ```
-	@media screen and (min-width: $screen-md-min) {
+@media screen and (min-width: $screen-md-min) {
 	Float: left;
 }
 ```
