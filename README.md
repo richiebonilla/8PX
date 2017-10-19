@@ -12,32 +12,40 @@ MD - 992–1199px wide
 LG - 1200px and greater
 ```
 
-Margins & Padding
-Class Structure
+## Margins & Padding
+
+###### Class Structure
 [declaration] + [modifier] + [screen size] + [value]
 
-Example: 
+###### Example: 
+
+```
 class=”p-top-xs-4”
 [padding] + [top] + [screen size: small] + [4*8px = 32px]
+```
 
-Output:
+**Output:**
+```
 @media screen and (min-width: $screen-sm-min) {
 	padding-top: 32px;
 }
+```
 
-Options:
+###### Options:
+```
 [margin / padding] + [top / right / bottom / left / x / y ] + [screen size] + 
 [1–35; 1.5–5.5]
 (1.5 is declared as “1_5”; Example: p-top-xs-1_5)
+```
 
 “X” defines -left and -right modifiers simultaneously
 “Y” defines -top and -bottom modifiers simultaneously
 
-Text Alignment
-Example:
+## Text Alignment
+**Example:**
 	class=”left-sm”
 
-Output:
+**Output:**
 	@media screen and (min-width: $screen-sm-min) {
 	text-align: left;
 }
@@ -45,32 +53,45 @@ Options:
 	[left / center / right] + [screen size]
 
 Floats
-Example:
+**Example:**
+```
 	class=”float-left-md”
-
-Output:
+```
+**Output:**
+```
 	@media screen and (min-width: $screen-md-min) {
 	Float: left;
 }
+```
 Options:
+```
 	[float] + [left / none / right] + [screen size]
+```
 
 Margin Auto
-Example:
-	class=”margin-auto-m”
+**Example:**
+```
+class=”margin-auto-m”
+```
 
-Output:
-	@media screen and (min-width: $screen-md-min) {
+**Output:**
+```
+@media screen and (min-width: $screen-md-min) {
 	Margin: auto;
 }
+```
 Options:
-	[margin] + [auto / initial] + [screen size]
-	
-Vertical Alignment
-Example:
-	class=”valign-middle-lg”
+```
+    [margin] + [auto / initial] + [screen size]
+```
 
-Output:
+Vertical Alignment
+**Example:**
+```
+class=”valign-middle-lg”
+```
+
+**Output:**
 	@media screen and (min-width: $screen-lg-min) {
 	Vertical-align: middle;
 }
@@ -78,15 +99,15 @@ Options:
 	[margin] + [auto / initial] + [screen size]
 
 Display
-Example:
+**Example:**
 	class=”hide-sm”
 
-Output:
+**Output:**
 	@media screen and (min-width: $screen-sm-min) {
 	display: none
 }
 
-Options:
+**Output:**
 	[hide / show] + [screen size] + [i / ib (optional)]
 .hide-md - display: none
 .show-md - display: block;
@@ -94,22 +115,24 @@ Options:
 .show-md-ib - display: inline-block
 
 Widths
-Example:
+**Example:**
 	class=”w-sm-20”
-Output:
+
+**Output:**
 	@media screen and (min-width: $screen-sm-min) {
 	Width: 20%;
 }
 Options:
 	[width] + [screen size] + [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
-Stacking Helper Classes in HTML
+## Stacking Helper Classes in HTML
 Classes are applied from smallest to largest and in the order of the box model (top, right, bottom, left). 
 If an element does not change based between screen sizes, then it should only receive an XS class. 
 Padding, Stacking Example
 class=”p-top-xs-1  p-top-md-3  p-top-lg-5”
 
-Output
+**Output:**
+```
 <style>
 padding-top: 8px;
 
@@ -120,11 +143,15 @@ padding-top: 8px;
 	padding-top: 32px;
 }
 </style>
+```
 
-Display, Stacking Example
+###### Display, Stacking Example
+```
 class=”hide-xs  show-md-ib  show-lg”
+```
 
-Output
+**Output:**
+```
 <style>
 display: none;
 
@@ -135,14 +162,19 @@ display: none;
 	display: block;
 }
 </style>
-Box Model, Stacking Example
+```
+
+###### Box Model, Stacking Example
 Declare by box model order first, then by screen size.
 This makes the classes easy to read and identify overrides.
 
+```
 class=”p-top-xs-1  p-top-sm-2  p-right-xs-1  p-right-sm-2  p-bottom-xs-1”
+```
 
-Multiple Types of Helpers, Stacking Example
+###### Multiple Types of Helpers, Stacking Example
 Declare in the same order we declare CSS: alignment & display, box model, appearance.
-
+```
 class=”float-xs show-xs p-top-xs-2 center-xs”
 (float, display, padding, text-align)
+```
