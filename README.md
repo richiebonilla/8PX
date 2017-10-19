@@ -5,10 +5,12 @@ SCSS mini-framework built on top of Bootstrap 3. Creates responsive helper class
 Helper classes are applied mobile-first. So, if a style is applied for all screen sizes, then the “xs” helper is only needed.
 
 Screen sizes (Based on Bootstrap 3 breakpoints)
-`XS - 0 and greater
+```
+XS - 0 and greater
 SM - 768–991px wide
 MD - 992–1199px wide
-LG - 1200px and greater`
+LG - 1200px and greater
+```
 
 Margins & Padding
 Class Structure
