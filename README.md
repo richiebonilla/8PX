@@ -4,7 +4,7 @@ SCSS mini-framework built on top of Bootstrap 3. Creates responsive helper class
 # Helper Classes
 Helper classes are applied mobile-first. So, if a style is applied for all screen sizes, then the “xs” helper is only needed.
 
-Screen sizes (Based on Bootstrap 3 breakpoints)
+**Screen sizes (Based on Bootstrap 3 breakpoints)**
 ```
 XS - 0 and greater
 SM - 768–991px wide
@@ -46,30 +46,35 @@ class=”p-top-xs-4”
 	class=”left-sm”
 
 **Output:**
-	@media screen and (min-width: $screen-sm-min) {
+```
+@media screen and (min-width: $screen-sm-min) {
 	text-align: left;
 }
-Options:
-	[left / center / right] + [screen size]
+```
 
-Floats
-**Example:**
+**Options:**
+```
+[left / center / right] + [screen size]
+```
+
+**Floats Example:**
 ```
 	class=”float-left-md”
 ```
+
 **Output:**
 ```
 	@media screen and (min-width: $screen-md-min) {
 	Float: left;
 }
 ```
-Options:
+
+**Options:**
 ```
 	[float] + [left / none / right] + [screen size]
 ```
 
-Margin Auto
-**Example:**
+**Margin Auto Example:**
 ```
 class=”margin-auto-m”
 ```
@@ -80,56 +85,71 @@ class=”margin-auto-m”
 	Margin: auto;
 }
 ```
-Options:
+
+**Options:**
 ```
     [margin] + [auto / initial] + [screen size]
 ```
 
-Vertical Alignment
-**Example:**
+**Vertical Alignment Example:**
 ```
 class=”valign-middle-lg”
 ```
 
 **Output:**
-	@media screen and (min-width: $screen-lg-min) {
+```
+@media screen and (min-width: $screen-lg-min) {
 	Vertical-align: middle;
 }
-Options:
-	[margin] + [auto / initial] + [screen size]
+```
 
-Display
-**Example:**
-	class=”hide-sm”
+**Options:**
+```
+[margin] + [auto / initial] + [screen size]
+```
+
+**Display Example:**
+```
+class=”hide-sm”
+```
 
 **Output:**
-	@media screen and (min-width: $screen-sm-min) {
+```
+@media screen and (min-width: $screen-sm-min) {
 	display: none
 }
+```
 
 **Output:**
-	[hide / show] + [screen size] + [i / ib (optional)]
+```
+[hide / show] + [screen size] + [i / ib (optional)]
 .hide-md - display: none
 .show-md - display: block;
 .show-md-i - display: inline;
 .show-md-ib - display: inline-block
+```
 
-Widths
-**Example:**
-	class=”w-sm-20”
+**Widths Example:**
+```
+class=”w-sm-20”
+```
 
 **Output:**
-	@media screen and (min-width: $screen-sm-min) {
+```
+@media screen and (min-width: $screen-sm-min) {
 	Width: 20%;
 }
-Options:
-	[width] + [screen size] + [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+```
+
+**Options:**
+	`[width] + [screen size] + [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]`
 
 ## Stacking Helper Classes in HTML
 Classes are applied from smallest to largest and in the order of the box model (top, right, bottom, left). 
 If an element does not change based between screen sizes, then it should only receive an XS class. 
-Padding, Stacking Example
-class=”p-top-xs-1  p-top-md-3  p-top-lg-5”
+
+**Padding, Stacking Example**
+`class=”p-top-xs-1  p-top-md-3  p-top-lg-5”`
 
 **Output:**
 ```
