@@ -24,7 +24,7 @@ class=”p-top-xs-4”
 [padding] + [top] + [screen size: small] + [4*8px = 32px]
 ```
 
-**Output:**
+###### Output:
 ```
 @media screen and (min-width: $screen-sm-min) {
 	padding-top: 32px;
@@ -45,14 +45,14 @@ class=”p-top-xs-4”
 **Example:**
 	class=”left-sm”
 
-**Output:**
+###### Output:
 ```
 @media screen and (min-width: $screen-sm-min) {
 	text-align: left;
 }
 ```
 
-**Options:**
+###### Options:
 ```
 [left / center / right] + [screen size]
 ```
@@ -62,14 +62,14 @@ class=”p-top-xs-4”
 	class=”float-left-md”
 ```
 
-**Output:**
+###### Output:
 ```
 	@media screen and (min-width: $screen-md-min) {
 	Float: left;
 }
 ```
 
-**Options:**
+###### Options:
 ```
 	[float] + [left / none / right] + [screen size]
 ```
@@ -79,14 +79,14 @@ class=”p-top-xs-4”
 class=”margin-auto-m”
 ```
 
-**Output:**
+###### Output:
 ```
 @media screen and (min-width: $screen-md-min) {
 	Margin: auto;
 }
 ```
 
-**Options:**
+###### Options:
 ```
     [margin] + [auto / initial] + [screen size]
 ```
@@ -96,14 +96,14 @@ class=”margin-auto-m”
 class=”valign-middle-lg”
 ```
 
-**Output:**
+###### Output:
 ```
 @media screen and (min-width: $screen-lg-min) {
 	Vertical-align: middle;
 }
 ```
 
-**Options:**
+###### Options:
 ```
 [margin] + [auto / initial] + [screen size]
 ```
@@ -113,14 +113,14 @@ class=”valign-middle-lg”
 class=”hide-sm”
 ```
 
-**Output:**
+###### Output:
 ```
 @media screen and (min-width: $screen-sm-min) {
 	display: none
 }
 ```
 
-**Output:**
+###### Output:
 ```
 [hide / show] + [screen size] + [i / ib (optional)]
 .hide-md - display: none
@@ -134,24 +134,28 @@ class=”hide-sm”
 class=”w-sm-20”
 ```
 
-**Output:**
+###### Output:
 ```
 @media screen and (min-width: $screen-sm-min) {
 	Width: 20%;
 }
 ```
 
-**Options:**
-	`[width] + [screen size] + [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]`
+###### Options:
+```
+[width] + [screen size] + [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+```
 
 ## Stacking Helper Classes in HTML
 Classes are applied from smallest to largest and in the order of the box model (top, right, bottom, left). 
 If an element does not change based between screen sizes, then it should only receive an XS class. 
 
-**Padding, Stacking Example**
-`class=”p-top-xs-1  p-top-md-3  p-top-lg-5”`
+###### Padding, Stacking Example
+```
+class=”p-top-xs-1  p-top-md-3  p-top-lg-5”
+```
 
-**Output:**
+###### Output:
 ```
 <style>
 padding-top: 8px;
@@ -165,12 +169,12 @@ padding-top: 8px;
 </style>
 ```
 
-###### Display, Stacking Example
+**Display, Stacking Example**
 ```
 class=”hide-xs  show-md-ib  show-lg”
 ```
 
-**Output:**
+###### Output:
 ```
 <style>
 display: none;
@@ -184,7 +188,7 @@ display: none;
 </style>
 ```
 
-###### Box Model, Stacking Example
+**Box Model, Stacking Example**
 Declare by box model order first, then by screen size.
 This makes the classes easy to read and identify overrides.
 
@@ -192,7 +196,7 @@ This makes the classes easy to read and identify overrides.
 class=”p-top-xs-1  p-top-sm-2  p-right-xs-1  p-right-sm-2  p-bottom-xs-1”
 ```
 
-###### Multiple Types of Helpers, Stacking Example
+**Multiple Types of Helpers, Stacking Example**
 Declare in the same order we declare CSS: alignment & display, box model, appearance.
 ```
 class=”float-xs show-xs p-top-xs-2 center-xs”
