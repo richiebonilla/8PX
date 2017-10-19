@@ -189,6 +189,7 @@ display: none;
 ```
 
 **Box Model, Stacking Example**
+
 Declare by box model order first, then by screen size.
 This makes the classes easy to read and identify overrides.
 
