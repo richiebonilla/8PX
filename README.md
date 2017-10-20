@@ -109,7 +109,7 @@ class=”valign-middle-lg”
 
 ###### Options:
 ```
-[margin] + [auto / initial] + [screen size]
+[margin] + [top / middle / bottom / inherit] + [screen size]
 ```
 
 **Display Example:**
