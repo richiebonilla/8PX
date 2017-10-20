@@ -46,7 +46,7 @@ class=”p-top-xs-4”
 ## Text Alignment
 **Example:**
 ```
-	class=”left-sm”
+class=”left-sm”
 ```
 
 ###### Output:
@@ -63,7 +63,7 @@ class=”p-top-xs-4”
 
 **Floats Example:**
 ```
-	class=”float-left-md”
+class=”float-left-md”
 ```
 
 ###### Output:
@@ -75,7 +75,7 @@ class=”p-top-xs-4”
 
 ###### Options:
 ```
-	[float] + [left / none / right] + [screen size]
+[float] + [left / none / right] + [screen size]
 ```
 
 **Margin Auto Example:**
@@ -86,13 +86,13 @@ class=”margin-auto-m”
 ###### Output:
 ```
 @media screen and (min-width: $screen-md-min) {
-	Margin: auto;
+	margin: auto;
 }
 ```
 
 ###### Options:
 ```
-    [margin] + [auto / initial] + [screen size]
+[margin] + [auto / initial] + [screen size]
 ```
 
 **Vertical Alignment Example:**
@@ -103,7 +103,7 @@ class=”valign-middle-lg”
 ###### Output:
 ```
 @media screen and (min-width: $screen-lg-min) {
-	Vertical-align: middle;
+	vertical-align: middle;
 }
 ```
 
@@ -141,7 +141,7 @@ class=”w-sm-20”
 ###### Output:
 ```
 @media screen and (min-width: $screen-sm-min) {
-	Width: 20%;
+	width: 20%;
 }
 ```
 
