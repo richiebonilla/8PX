@@ -1,0 +1,531 @@
+//
+// This is a mini-framework built on top of Bootstrap 3.
+// This file has helper classes for spacing, aligning, and displaying elements & text
+//
+
+
+//****************
+// SPACING
+//****************
+
+// Modify this to change the system scale (Made for an 8pt grid system)
+$base-unit:         8;
+
+// Extra small devices (portrait phones, less than 480px)
+// No value because it is the default – "mobile first"
+
+// Small screen (landscape phone)
+$screen-xs-min:     480px;
+
+// Small screen (tablet)
+$screen-sm-min:     768px;
+
+// Medium screen (desktop)
+$screen-md-min:     992px;
+
+// Large screen (desktop-wide)
+$screen-lg-min:     1200px;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:     ($screen-sm-min - 1);
+$screen-sm-max:     ($screen-md-min - 1);
+$screen-md-max:     ($screen-lg-min - 1);
+
+// Calculate measurement units
+$x0_5:              $base-unit * 0.5 + px;
+$x1:                $base-unit * 1 + px;
+$x1_5:              $base-unit * 1.5 + px;
+$x2:                $base-unit * 2 + px;
+$x2_5:              $base-unit * 2.5 + px;
+$x3:                $base-unit * 3 + px;
+$x3_5:              $base-unit * 3.5 + px;
+$x4:                $base-unit * 4 + px;
+$x4_5:              $base-unit * 4.5 + px;
+$x5:                $base-unit * 5 + px;
+$x5_5:              $base-unit * 5.5 + px;
+$x6:                $base-unit * 6 + px;
+$x6_5:              $base-unit * 6.5 + px;
+$x7:                $base-unit * 7 + px;
+$x7_5:              $base-unit * 7.5 + px;
+$x8:                $base-unit * 8 + px;
+$x8_5:              $base-unit * 8.5 + px;
+$x9:                $base-unit * 9 + px;
+$x10:               $base-unit * 10 + px;
+$x11:               $base-unit * 11 + px;
+$x12:               $base-unit * 12 + px;
+$x13:               $base-unit * 13 + px;
+$x14:               $base-unit * 14 + px;
+$x15:               $base-unit * 15 + px;
+$x16:               $base-unit * 16 + px;
+$x17:               $base-unit * 17 + px;
+$x18:               $base-unit * 18 + px;
+$x19:               $base-unit * 19 + px;
+$x20:               $base-unit * 20 + px;
+$x21:               $base-unit * 21 + px;
+$x22:               $base-unit * 22 + px;
+$x23:               $base-unit * 23 + px;
+$x24:               $base-unit * 24 + px;
+$x25:               $base-unit * 25 + px;
+$x26:               $base-unit * 26 + px;
+$x27:               $base-unit * 27 + px;
+$x28:               $base-unit * 28 + px;
+$x29:               $base-unit * 29 + px;
+$x30:               $base-unit * 30 + px;
+$x31:               $base-unit * 31 + px;
+$x32:               $base-unit * 32 + px;
+$x33:               $base-unit * 33 + px;
+$x34:               $base-unit * 34 + px;
+$x35:               $base-unit * 35 + px;
+
+
+// Creates unit classes for a given screen size
+@mixin helper-units($screensize, $margin-padding, $side) {
+    &-#{$screensize} {
+        &-0 {
+            #{$margin-padding}-#{$side}: 0 !important;
+        }
+        &-0_5 {
+            #{$margin-padding}-#{$side}: $x0_5 !important;
+        }
+        &-1 {
+            #{$margin-padding}-#{$side}: $x1 !important;
+        }
+        &-1_5 {
+            #{$margin-padding}-#{$side}: $x1_5 !important;
+        }
+        &-2 {
+            #{$margin-padding}-#{$side}: $x2 !important;
+        }
+        &-2_5 {
+            #{$margin-padding}-#{$side}: $x2_5 !important;
+        }
+        &-3 {
+            #{$margin-padding}-#{$side}: $x3 !important;
+        }
+        &-3_5 {
+            #{$margin-padding}-#{$side}: $x3_5 !important;
+        }
+        &-4 {
+            #{$margin-padding}-#{$side}: $x4 !important;
+        }
+        &-4_5 {
+            #{$margin-padding}-#{$side}: $x4_5 !important;
+        }
+        &-5 {
+            #{$margin-padding}-#{$side}: $x5 !important;
+        }
+        &-5_5 {
+            #{$margin-padding}-#{$side}: $x5 !important;
+        }
+        &-6 {
+            #{$margin-padding}-#{$side}: $x6 !important;
+        }
+        &-6_5 {
+            #{$margin-padding}-#{$side}: $x6_5 !important;
+        }
+        &-7 {
+            #{$margin-padding}-#{$side}: $x7 !important;
+        }
+        &-7_5 {
+            #{$margin-padding}-#{$side}: $x7_5 !important;
+        }
+        &-8 {
+            #{$margin-padding}-#{$side}: $x8 !important;
+        }
+        &-8_5 {
+            #{$margin-padding}-#{$side}: $x8_5 !important;
+        }
+        &-9 {
+            #{$margin-padding}-#{$side}: $x9 !important;
+        }
+        &-10 {
+            #{$margin-padding}-#{$side}: $x10 !important;
+        }
+        &-11 {
+            #{$margin-padding}-#{$side}: $x11 !important;
+        }
+        &-12 {
+            #{$margin-padding}-#{$side}: $x12 !important;
+        }
+        &-13 {
+            #{$margin-padding}-#{$side}: $x13 !important;
+        }
+        &-14 {
+            #{$margin-padding}-#{$side}: $x14 !important;
+        }
+        &-15 {
+            #{$margin-padding}-#{$side}: $x15 !important;
+        }
+        &-16 {
+            #{$margin-padding}-#{$side}: $x16 !important;
+        }
+        &-17 {
+            #{$margin-padding}-#{$side}: $x17 !important;
+        }
+        &-18 {
+            #{$margin-padding}-#{$side}: $x18 !important;
+        }
+        &-19 {
+            #{$margin-padding}-#{$side}: $x19 !important;
+        }
+        &-20 {
+            #{$margin-padding}-#{$side}: $x20 !important;
+        }
+        &-21 {
+            #{$margin-padding}-#{$side}: $x21 !important;
+        }
+        &-22 {
+            #{$margin-padding}-#{$side}: $x22 !important;
+        }
+        &-23 {
+            #{$margin-padding}-#{$side}: $x23 !important;
+        }
+        &-24 {
+            #{$margin-padding}-#{$side}: $x24 !important;
+        }
+        &-25 {
+            #{$margin-padding}-#{$side}: $x25 !important;
+        }
+        &-26 {
+            #{$margin-padding}-#{$side}: $x26 !important;
+        }
+        &-27 {
+            #{$margin-padding}-#{$side}: $x27 !important;
+        }
+        &-28 {
+            #{$margin-padding}-#{$side}: $x28 !important;
+        }
+        &-29 {
+            #{$margin-padding}-#{$side}: $x29 !important;
+        }
+        &-30 {
+            #{$margin-padding}-#{$side}: $x30 !important;
+        }
+        &-31 {
+            #{$margin-padding}-#{$side}: $x31 !important;
+        }
+        &-32 {
+            #{$margin-padding}-#{$side}: $x32 !important;
+        }
+        &-33 {
+            #{$margin-padding}-#{$side}: $x33 !important;
+        }
+        &-34 {
+            #{$margin-padding}-#{$side}: $x34 !important;
+        }
+        &-35 {
+            #{$margin-padding}-#{$side}: $x35 !important;
+        }
+        
+    }
+}
+
+// Creates responsive classes for a full side of the box model (top, right, bottom, left)
+@mixin full-side-helpers($side, $margin-padding) {
+    &-#{$side} {
+        // No media query for xs so that it is mobile-first
+        @include helper-units (xs,$margin-padding,$side);
+        
+        @media screen and (min-width: $screen-sm-min) {
+            @include helper-units (sm,$margin-padding,$side);
+        }
+        @media screen and (min-width: $screen-md-min) {
+            @include helper-units (md,$margin-padding,$side);
+        }
+        @media screen and (min-width: $screen-lg-min) {
+            @include helper-units (lg,$margin-padding,$side);
+        }
+    }
+}
+
+//****************
+// Margins
+//****************
+// Final Product: .m-{side}-{screensize}-{percent}
+.m {
+    @include full-side-helpers(top, margin);
+    @include full-side-helpers(right, margin);
+    @include full-side-helpers(bottom, margin);
+    @include full-side-helpers(left, margin);
+    
+    // Creates equal margin on top and bottom
+    &-y {
+        // No media query for xs so that it is mobile-first
+        @include helper-units (xs,margin,top);
+        @include helper-units (xs,margin,bottom);
+        
+        @media screen and (min-width: $screen-sm-min) {
+            @include helper-units (sm,margin,top);
+            @include helper-units (sm,margin,bottom);
+        }
+        @media screen and (min-width: $screen-md-min) {
+            @include helper-units (md,margin,top);
+            @include helper-units (md,margin,bottom);
+        }
+        @media screen and (min-width: $screen-lg-min) {
+            @include helper-units (lg,margin,top);
+            @include helper-units (lg,margin,bottom);
+        }
+    }
+    
+    // Creates equal margin on left and right
+    &-x {
+        // No media query for xs so that it is mobile-first
+        @include helper-units (xs,margin,right);
+        @include helper-units (xs,margin,left);
+        
+        @media screen and (min-width: $screen-sm-min) {
+            @include helper-units (sm,margin,right);
+            @include helper-units (sm,margin,left);
+        }
+        @media screen and (min-width: $screen-md-min) {
+            @include helper-units (md,margin,right);
+            @include helper-units (md,margin,left);
+        }
+        @media screen and (min-width: $screen-lg-min) {
+            @include helper-units (lg,margin,right);
+            @include helper-units (lg,margin,left);
+        }
+    }
+}
+
+//****************
+// Padding
+//****************
+// Final Product: .p-{side}-{screensize}-{percent}
+.p {
+    @include full-side-helpers(top, padding);
+    @include full-side-helpers(right, padding);
+    @include full-side-helpers(bottom, padding);
+    @include full-side-helpers(left, padding);
+    
+    // Creates equal padding on top and bottom
+    &-y {
+        // No media query for xs so that it is mobile-first
+        @include helper-units (xs,padding,top);
+        @include helper-units (xs,padding,bottom);
+        
+        @media screen and (min-width: $screen-sm-min) {
+            @include helper-units (sm,padding,top);
+            @include helper-units (sm,padding,bottom);
+        }
+        @media screen and (min-width: $screen-md-min) {
+            @include helper-units (md,padding,top);
+            @include helper-units (md,padding,bottom);
+        }
+        @media screen and (min-width: $screen-lg-min) {
+            @include helper-units (lg,padding,top);
+            @include helper-units (lg,padding,bottom);
+        }
+    }
+    
+    // Creates equal padding on left and right
+    &-x {
+        // No media query for xs so that it is mobile-first
+        @include helper-units (xs,padding,right);
+        @include helper-units (xs,padding,left);
+        
+        @media screen and (min-width: $screen-sm-min) {
+            @include helper-units (sm,padding,right);
+            @include helper-units (sm,padding,left);
+        }
+        @media screen and (min-width: $screen-md-min) {
+            @include helper-units (md,padding,right);
+            @include helper-units (md,padding,left);
+        }
+        @media screen and (min-width: $screen-lg-min) {
+            @include helper-units (lg,padding,right);
+            @include helper-units (lg,padding,left);
+        }
+    }
+}
+
+//**************** 
+// DISPLAYING
+//****************
+
+// No media query for xs so that it is mobile-first
+.hide-xs { display: none !important; }
+.show-xs { display: block !important; }
+.show-xs-i { display: inline !important; }
+.show-xs-ib { display: inline-block !important; }
+
+@media (min-width: $screen-sm-min) {
+    .hide-sm { display: none !important; }
+    .show-sm { display: block !important; }
+    .show-sm-i { display: inline !important; }
+    .show-sm-ib { display: inline-block !important; }
+}
+@media (min-width: $screen-md-min) {
+    .hide-md { display: none !important; }
+    .show-md { display: block !important; }
+    .show-md-i { display: inline !important; }
+    .show-md-ib { display: inline-block !important; }
+}
+@media (min-width: $screen-lg-min) {
+    .hide-lg { display: none !important; }
+    .show-lg { display: block !important; }
+    .show-lg-i { display: inline !important; }
+    .show-lg-ib { display: inline-block !important; }
+}
+.hide { display: none !important; }
+
+//****************
+// ALIGNMENT
+//****************
+
+// Text Alignment
+
+// No media query for xs so that it is mobile-first
+.left-xs { text-align: left; }
+.center-xs { text-align: center; }
+.right-xs { text-align: right; }
+
+@media (min-width: $screen-sm-min) {
+    .left-sm { text-align: left; }
+    .center-sm { text-align: center; }
+    .right-sm { text-align: right; }
+}
+@media (min-width: $screen-md-min) {
+    .left-md { text-align: left; }
+    .center-md { text-align: center; }
+    .right-md { text-align: right; }
+}
+@media (min-width: $screen-lg-min) {
+    .left-lg { text-align: left; }
+    .center-lg { text-align: center; }
+    .right-lg { text-align: right; }
+}
+
+// Floats
+
+// No media query for xs so that it is mobile-first
+.float-left-xs { float: left; }
+.float-none-xs { float: none;}
+.float-right-xs { float: right; }
+
+@media (min-width: $screen-sm-min) {
+    .float-left-sm { float: left; }
+    .float-none-sm { float: none;}
+    .float-right-sm { float: right; }
+}
+@media (min-width: $screen-md-min) {
+    .float-left-md { float: left; }
+    .float-none-md { float: none;}
+    .float-right-md { float: right; }
+}
+@media (min-width: $screen-lg-min) {
+    .float-left-lg { float: left; }
+    .float-none-lg { float: none;}
+    .float-right-lg { float: right; }
+}
+
+// Margin Auto
+
+// No media query for xs so that it is mobile-first
+.margin-auto-xs { margin-right: auto !important; margin-left: auto !important; }
+.margin-initial-xs { margin-right: initial !important; margin-left: initial !important; }
+
+@media (min-width: $screen-sm-min) {
+    .margin-auto-sm { margin-right: auto !important; margin-left: auto !important; }
+    .margin-initial-sm { margin-right: initial !important; margin-left: initial !important; }
+}
+@media (min-width: $screen-md-min) {
+    .margin-auto-md { margin-right: auto !important; margin-left: auto !important; }
+    .margin-initial-md { margin-right: initial !important; margin-left: initial !important; }
+}
+@media (min-width: $screen-lg-min) {
+    .margin-auto-lg { margin-right: auto !important; margin-left: auto !important; }
+    .margin-initial-lg { margin-right: initial !important; margin-left: initial !important; }
+}
+
+// Vertical Alignment
+
+// No media query for xs so that it is mobile-first
+.valign-top-xs { vertical-align: top; }
+.valign-middle-xs { vertical-align: middle; }
+.valign-bottom-xs { vertical-align: bottom; }
+.valign-inherit-xs { vertical-align: inherit; }
+
+@media (min-width: $screen-sm-min) {
+    .valign-top-sm { vertical-align: top; }
+    .valign-middle-sm { vertical-align: middle; }
+    .valign-bottom-sm { vertical-align: bottom; }
+    .valign-inherit-sm { vertical-align: inherit; }
+}
+@media (min-width: $screen-md-min) {
+    .valign-top-md { vertical-align: top; }
+    .valign-middle-md { vertical-align: middle; }
+    .valign-bottom-md { vertical-align: bottom; }
+    .valign-inherit-md { vertical-align: inherit; }
+}
+@media (min-width: $screen-lg-min) {
+    .valign-top-lg { vertical-align: top; }
+    .valign-middle-lg { vertical-align: middle; }
+    .valign-bottom-lg { vertical-align: bottom; }
+    .valign-inherit-lg { vertical-align: inherit; }
+}
+
+
+//****************
+// RESPSONSIVE WIDTHS
+//****************
+
+// Creates percent classes for a given screen size
+@mixin helper-percents($screensize) {
+    &-#{$screensize} {
+        &-10 {
+            width: 10% !important;
+        }
+        &-20 {
+            width: 20% !important;
+        }
+        &-30 {
+            width: 30% !important;
+        }
+        &-40 {
+            width: 40% !important;
+        }
+        &-50 {
+            width: 50% !important;
+        }
+        &-60 {
+            width: 60% !important;
+        }
+        &-70 {
+            width: 70% !important;
+        }
+        &-80 {
+            width: 80% !important;
+        }
+        &-90 {
+            width: 90% !important;
+        }
+        &-100 {
+            display: block;
+            width: 100% !important;
+        }
+    }  
+}
+
+// Creates responsive percent classes
+@mixin responsive-percents {
+    
+    // No media query for xs so that it is mobile-first
+    @include helper-percents (xs);
+
+    @media screen and (min-width: $screen-sm-min) {
+        @include helper-percents (sm);
+    }
+    @media screen and (min-width: $screen-md-min) {
+        @include helper-percents (md);
+    }
+    @media screen and (min-width: $screen-lg-min) {
+        @include helper-percents (lg);
+    }
+}
+
+// Output Final Product: .w-{screensize}-{percent}
+.w {
+    @include responsive-percents;
+}

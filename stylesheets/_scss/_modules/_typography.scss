@@ -1,0 +1,188 @@
+
+
+// Icon Fonts
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+// **************************************************
+// Import these into SCSS for local style overriding
+// **************************************************
+
+@mixin style-tint-primary {
+    color: rgb(41, 50, 64);
+    opacity: 0.9;
+}
+@mixin style-tint-secondary {
+    color: rgb(41, 50, 64);
+    opacity: 0.65;
+}
+@mixin style-tint-disabled {
+    color: rgb(41, 50, 64);
+    opacity: 0.3;
+}
+@mixin style-tint-white {
+    color: #fff;
+    opacity: 1;
+}
+@mixin style-bold{
+    font-weight: 600;
+}
+@mixin style-uppercase{
+    text-transform: uppercase;  
+}
+@mixin style-monospace{
+    font-family: monospace;
+}
+
+// **********************
+// Full Text Style Mixins
+// **********************
+
+// Font Tints
+// Set the values for primary, secondary, and disabled text styles
+@mixin font-tints {
+    @include style-tint-primary;
+    
+    &.secondary {
+        @include style-tint-secondary;
+    }
+    &.disabled {
+        @include style-tint-disabled;
+    }
+    &.white {
+        @include style-tint-white;
+    }
+}
+@mixin bold {
+    &.bold {
+        @include style-bold;
+    }
+}
+@mixin uppercase {
+    &.uppercase {
+         @include style-uppercase;
+    }
+}
+@mixin monospace {
+    &.monospace {
+        @include style-monospace;
+        @include bold;
+    }
+}
+@mixin h1 {
+    margin-bottom: $x1;
+    
+    font-size: $x4_5;
+    line-height: $x4_5;
+    font-weight: 600;
+    
+    @include uppercase;
+    @include font-tints;
+    
+    @media screen and (min-width: $screen-sm-min) {
+        font-size: $x4_5;
+        line-height: $x4_5;
+    }
+}
+@mixin h2 {
+    margin-bottom: $x1;
+    
+    font-size: $x3_5;
+    line-height: $x3_5;
+    font-weight: 600;
+    
+    @include uppercase;
+    @include font-tints;
+    
+    @media screen and (min-width: $screen-sm-min) {
+        font-size: $x3_5;
+        line-height: $x3_5;
+    }
+}
+@mixin h3 {
+    font-size: $x3;
+    line-height: $x3;
+    font-weight: 600;
+    
+    @include uppercase;
+    @include font-tints;
+}
+@mixin h4 {
+    font-size: $x2_5;
+    line-height: $x2_5;
+    font-weight: 600;
+    
+    @include uppercase;
+    @include font-tints;
+}
+@mixin h5 {
+    margin-bottom: 2px;
+    
+    font-size: $x2_5;
+    line-height: $x2_5;
+    font-weight: 400;
+    
+    @include bold;
+    @include uppercase;
+    @include font-tints;
+    
+    @media screen and (min-width: $screen-sm-min) {
+        margin-bottom: 8px;
+        
+        font-size: $x2_5;
+        line-height: $x2_5;
+    }
+}
+@mixin body {
+    font-size: $x2;
+    line-height: $x3;
+    
+    @include bold;
+    @include uppercase;
+    @include font-tints;
+}
+@mixin caption {
+    font-size: 14px;
+    line-height: $x2;
+    
+    @include bold;
+    @include uppercase;
+    @include font-tints;
+}
+@mixin small {
+    font-size: $x1_5;
+    line-height: $x1_5;
+    
+    @include bold;
+    @include uppercase;
+    @include font-tints;
+}
+
+// Creates helpers for every style at a single screen size
+@mixin text-style-helper($screen-size) {
+    h1, .h1#{$screen-size} { @include h1; }
+    h2, .h2#{$screen-size} { @include h2; }
+    h3, .h3#{$screen-size} { @include h3; }
+    h4, .h4#{$screen-size} { @include h4; }
+    h5, .h5#{$screen-size} { @include h5; }
+    .body#{$screen-size} { @include body; }
+    .caption#{$screen-size} { @include caption; }
+    .small#{$screen-size} { @include small; }
+}
+
+
+// Final Output: Create helpers for every screen size within their media query
+
+// This line adds support for text classes without a screen size.
+@include text-style-helper(null);
+
+@include text-style-helper(-xs);
+
+@media screen and (min-width: $screen-sm-min) {
+    @include text-style-helper(-sm)
+}
+@media screen and (min-width: $screen-md-min) {
+    @include text-style-helper(-md)
+}
+@media screen and (min-width: $screen-lg-min) {
+    @include text-style-helper(-lg)
+}
