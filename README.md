@@ -1,4 +1,4 @@
-# 8pt
+# EightPX
 SCSS mini-framework built on top of Bootstrap 3. Creates responsive helper classes to hide/show elements, specify margins &amp; padding, and more, without writing CSS. It assumes there is a standard grid size being used by the designers on the project. The default is an 8px grid, so all numbered suffixes represent multiples of 8px. This reduces the need for one-off CSS that bloats stylesheets and works alongside Bootstrap's native helper classes.
 
 # Helper Classes
