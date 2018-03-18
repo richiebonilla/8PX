@@ -31,23 +31,23 @@ $var-prefix: '$x';
 }
 
 // construct all sides of the box model for a given breakpoint
-@mixin construct-sides($break) {
+@mixin construct-sides($break, $prop) {
   @if $break == xs {
     @each $side, $s in (top, t), (right, r), (bottom, b), (left, l), (x, x), (y, y) {
       &#{$s}- {
-        @include construct-declarations(margin, #{$side}, $halves, false);
+        @include construct-declarations(#{$prop}, #{$side}, $halves, false);
       }
       &#{$s}- {
-        @include construct-declarations(margin, #{$side}, $halves, true);
+        @include construct-declarations(#{$prop}, #{$side}, $halves, true);
       }
     }
   } @else {
     @each $side, $s in (top, t), (right, r), (bottom, b), (left, l), (x, x), (y, y) {
       &#{$s}-#{$break} {
-        @include construct-declarations(margin, #{$side}, $halves, false);
+        @include construct-declarations(#{$prop}, #{$side}, $halves, false);
       }
       &#{$s}-#{$break} {
-        @include construct-declarations(margin, #{$side}, $halves, true);
+        @include construct-declarations(#{$prop}, #{$side}, $halves, true);
       }
     } 
   }
@@ -57,7 +57,7 @@ $var-prefix: '$x';
 @mixin construct-spacing-classes($break) {
   @each $prop, $p in (margin, m), (padding, p) {
     &#{$p} {
-      @include construct-sides($break);
+      @include construct-sides($break, #{$prop});
     }
   }
 }
@@ -103,9 +103,7 @@ $var-prefix: '$x';
       &tai {
         text-align: inherit;
       }    
-
       
-
     } @else {
       // Display classes
       &hide-#{$break} {

@@ -1,210 +1,66 @@
-# 8PX
-SCSS mini-framework built on top of Bootstrap 3. Creates responsive helper classes to hide/show elements, specify margins &amp; padding, and more, without writing CSS. It assumes there is a standard grid size being used by the designers on the project. The default is an 8px grid, so all numbered suffixes represent multiples of 8px. This reduces the need for one-off CSS that bloats stylesheets and works alongside Bootstrap's native helper classes.
+Mini CSS Library that provides helper classes for spacing and displaying elements according to Bootstrap 4's breakpoints without writing any repetitive CSS.
 
-# Helper Classes
-Helper classes are applied mobile-first. So, if a style is applied for all screen sizes, then the “xs” helper is only needed.
+The library assumes that your wireframes are designed using an 8pt grid system, so all margin/padding sizes are multiples of 8px.
 
-**Screen sizes (Based on Bootstrap 3 breakpoints)**
-```
-XS - 0 and greater
-SM - 768–991px wide
-MD - 992–1199px wide
-LG - 1200px and greater
-```
+Use .xshow and .xhide to control the display property of an element at a given breakpoint.
+- .xhide will display the element at all breakpoints, but changing it to .xhide-sm will only hide it at the 'small' breakpoint and up.
 
-## Margins & Padding
+Use the margin and padding classes to add box model properties in multiples of 8px.
+- .xmt-3 will add a margin-top of 24px to the element
+- .xpb-4 will add a padding-bottom of 32px to the element
+- .xmx-5 will add a margin-left and margin-right of 40px to the element
 
-###### Class Structure
-```
-[declaration] + [modifier] + [screen size] + [value]
-```
+Use the 'u' suffix for multiples under 10 to increment by 4px instead of 8px
+- .xmt-3 = margin-top of 24px, while .xmt-3u = margin top of 28px
 
-###### Example: 
+Add breakpoints to the classes to add responsive margins and paddings
+- .xmr-sm3 = margin-right of 24px for breakpoints 'sm' and up
 
-```
-class=”p-top-xs-4”
-[padding] + [top] + [screen size: small] + [4*8px = 32px]
-```
+# Full List of Available Classes
 
-###### Output:
+**Margin & Padding Classes**
 ```
-@media screen and (min-width: $screen-sm-min) {
-	padding-top: 32px;
-}
+.x (the x prefix starts all classes in Eightpx to avoid conflicts)
+.xm[t, r, b, l, x, y]-[1-40] 
+.xm[t, r, b, l, x, y]-[sm, md, lg, xl][1-40]
+
+.xp[t, r, b, l, x, y]-[1-40] 
+.xp[t, r, b, l, x, y]-[sm, md, lg, xl][1-40]
+
+.xmauto-[xs, sm, md, lg, xl] // margin: auto
+.xmintial-[xs, sm, md, lg, xl] // margin: initial
 ```
 
-###### Options:
+**Display Classes**
 ```
-[margin / padding] + [top / right / bottom / left / x / y ] + [screen size] + 
-[1–35; 1.5–5.5]
-(1.5 is declared as “1_5”; Example: p-top-xs-1_5)
+.xshow // display: block
+.xshow-[sm, md, lg, xl] // display: block
+.xshow-ib // display: inline-block
+.xshow-i // display: inline
+
+.xhide // display: none
+.xhide-[sm, md, lg, xl] // display: none
 ```
 
-“X” defines -left and -right modifiers simultaneously
-“Y” defines -top and -bottom modifiers simultaneously
+**Text Align Classes**
+```
+.xta[l, r, c] // text-align: [left, right, center]
+``` 
 
-## Text Alignment
-**Example:**
+**Typography Classes**
 ```
-class=”left-sm”
-```
+.h1-[xs, sm, md, lg, xl]  // font-size: 36px; line-height: 36px;
+.h2-[xs, sm, md, lg, xl]  // font-size: 28px; line-height: 28px;
+.h3-[xs, sm, md, lg, xl]  // font-size: 24px; line-height: 24px;
+.h4-[xs, sm, md, lg, xl]  // font-size: 20px; line-height: 20px;
+.h5-[xs, sm, md, lg, xl]  // font-size: 20px; line-height: 20px;
+.body-[xs, sm, md, lg, xl]  // font-size: 16px; line-height: 24px;
+.caption-[xs, sm, md, lg, xl]  // font-size: 14px; line-height: 16px;
+.small-[xs, sm, md, lg, xl]  // font-size: 12px; line-height: 12px;
 
-###### Output:
-```
-@media screen and (min-width: $screen-sm-min) {
-	text-align: left;
-}
-```
+.secondary // opacity: 0.65
+.disabled // opacity: 0.3
 
-###### Options:
-```
-[left / center / right] + [screen size]
-```
-
-**Floats Example:**
-```
-class=”float-left-md”
-```
-
-###### Output:
-```
-@media screen and (min-width: $screen-md-min) {
-	Float: left;
-}
-```
-
-###### Options:
-```
-[float] + [left / none / right] + [screen size]
-```
-
-**Margin Auto Example:**
-```
-class=”margin-auto-m”
-```
-
-###### Output:
-```
-@media screen and (min-width: $screen-md-min) {
-	margin: auto;
-}
-```
-
-###### Options:
-```
-[margin] + [auto / initial] + [screen size]
-```
-
-**Vertical Alignment Example:**
-```
-class=”valign-middle-lg”
-```
-
-###### Output:
-```
-@media screen and (min-width: $screen-lg-min) {
-	vertical-align: middle;
-}
-```
-
-###### Options:
-```
-[margin] + [top / middle / bottom / inherit] + [screen size]
-```
-
-**Display Example:**
-```
-class=”hide-sm”
-```
-
-###### Output:
-```
-@media screen and (min-width: $screen-sm-min) {
-	display: none
-}
-```
-
-###### Output:
-```
-[hide / show] + [screen size] + [i / ib (optional)]
-.hide-md - display: none
-.show-md - display: block;
-.show-md-i - display: inline;
-.show-md-ib - display: inline-block
-```
-
-**Widths Example:**
-```
-class=”w-sm-20”
-```
-
-###### Output:
-```
-@media screen and (min-width: $screen-sm-min) {
-	width: 20%;
-}
-```
-
-###### Options:
-```
-[width] + [screen size] + [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-```
-
-## Stacking Helper Classes in HTML
-Classes are applied from smallest to largest and in the order of the box model (top, right, bottom, left). 
-If an element does not change based between screen sizes, then it should only receive an XS class. 
-
-###### Padding, Stacking Example
-```
-class=”p-top-xs-1  p-top-md-3  p-top-lg-5”
-```
-
-###### Output:
-```
-<style>
-padding-top: 8px;
-
-@media screen and (min-width: $screen-md-min) {
-	padding-top: 32px;
-}
-@media screen and (min-width: $screen-lg-min) {
-	padding-top: 32px;
-}
-</style>
-```
-
-**Display, Stacking Example**
-```
-class=”hide-xs  show-md-ib  show-lg”
-```
-
-###### Output:
-```
-<style>
-display: none;
-
-@media screen and (min-width: $screen-md-min) {
-	display: inline-block;
-}
-@media screen and (min-width: $screen-lg-min) {
-	display: block;
-}
-</style>
-```
-
-**Box Model, Stacking Example**
-
-Declare by box model order first, then by screen size.
-This makes the classes easy to read and identify overrides.
-
-```
-class=”p-top-xs-1  p-top-sm-2  p-right-xs-1  p-right-sm-2  p-bottom-xs-1”
-```
-
-**Multiple Types of Helpers, Stacking Example**
-
-Declare in the same order we declare CSS: alignment & display, box model, appearance.
-```
-class=”float-xs show-xs p-top-xs-2 center-xs”
-(float, display, padding, text-align)
+.white // color: #fff
+.uppercase // text-transform: uppercase
 ```
