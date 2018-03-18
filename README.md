@@ -21,6 +21,9 @@ Use the 'u' suffix to increment by 4px instead of 8px
 Add breakpoints to the classes to add responsive margins and paddings
 - .mr-sm3     // margin-right: 24px; for breakpoints 'sm' and up
 
+The same values used at the end of classes can be used as variables in your SASS code to represent pixel values. This means you don't have to convert your grid values (4 grid spaces) to pixel values (32px) mentally if you want to use them in stylesheets.
+- $x10        // 80px
+- $x10u       // 84px
 
 # Full List of Available Classes
 *[bracketed] denotes available options for that spot in the class.*
