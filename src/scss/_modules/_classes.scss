@@ -4,28 +4,38 @@ $var-prefix: '$x';
 
 // Determine if side is x or y and use correct template
 @mixin use-correct-properties($prop, $side, $i, $var-prefix) {
-  &#{$i} {
-    @if $side == 'y' {
-      #{$prop}-top: #{$var-prefix}#{$i} !important;
-      #{$prop}-bottom: #{$var-prefix}#{$i} !important;
-    } @else if $side == 'x' {
-      #{$prop}-right: #{$var-prefix}#{$i} !important;
-      #{$prop}-left: #{$var-prefix}#{$i} !important;
-    } @else {
-      #{$prop}-#{$side}: #{$var-prefix}#{$i} !important;
-    }
-  }
+  
 }
 
 // Construct declaration for each grid multiple for the given prop and side
 @mixin construct-declarations($prop, $side, $list, $make-halves) {
   @if $make-halves == true {
-    @each $i in $list {
-      @include use-correct-properties($prop, $side, $i, $var-prefix);
+    @for $i from 1 to 10 {
+      &#{$i}u {
+        @if $side == 'y' {
+          #{$prop}-top: ($i * $base) + ($base * 0.5) !important;
+          #{$prop}-bottom: ($i * $base) + ($base * 0.5) !important;
+        } @else if $side == 'x' {
+          #{$prop}-right: ($i * $base) + ($base * 0.5) !important;
+          #{$prop}-left: ($i * $base) + ($base * 0.5) !important;
+        } @else {
+          #{$prop}-#{$side}: ($i * $base) + ($base * 0.5) !important;
+        }
+      }
     }
   } @else {
     @for $i from 1 to 41 {
-      @include use-correct-properties($prop, $side, $i, $var-prefix);
+      &#{$i} {
+        @if $side == 'y' {
+          #{$prop}-top: $i * $base !important;
+          #{$prop}-bottom: $i * $base !important;
+        } @else if $side == 'x' {
+          #{$prop}-right: $i * $base !important;
+          #{$prop}-left: $i * $base !important;
+        } @else {
+          #{$prop}-#{$side}: $i * $base !important;
+        }
+      }
     }
   }
 }
