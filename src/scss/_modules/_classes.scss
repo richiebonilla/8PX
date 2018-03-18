@@ -1,0 +1,170 @@
+// TODO: Typography styling that fits in the grid
+$halves: '1u' '2u' '3u' '4u' '5u' '6u' '7u' '8u' '9u';
+$var-prefix: '$x';
+
+// Determine if side is x or y and use correct template
+@mixin use-correct-properties($prop, $side, $i, $var-prefix) {
+  &#{$i} {
+    @if $side == 'y' {
+      #{$prop}-top: #{$var-prefix}#{$i} !important;
+      #{$prop}-bottom: #{$var-prefix}#{$i} !important;
+    } @else if $side == 'x' {
+      #{$prop}-right: #{$var-prefix}#{$i} !important;
+      #{$prop}-left: #{$var-prefix}#{$i} !important;
+    } @else {
+      #{$prop}-#{$side}: #{$var-prefix}#{$i} !important;
+    }
+  }
+}
+
+// Construct declaration for each grid multiple for the given prop and side
+@mixin construct-declarations($prop, $side, $list, $make-halves) {
+  @if $make-halves == true {
+    @each $i in $list {
+      @include use-correct-properties($prop, $side, $i, $var-prefix);
+    }
+  } @else {
+    @for $i from 1 to 41 {
+      @include use-correct-properties($prop, $side, $i, $var-prefix);
+    }
+  }
+}
+
+// construct all sides of the box model for a given breakpoint
+@mixin construct-sides($break) {
+  @if $break == xs {
+    @each $side, $s in (top, t), (right, r), (bottom, b), (left, l), (x, x), (y, y) {
+      &#{$s}- {
+        @include construct-declarations(margin, #{$side}, $halves, false);
+      }
+      &#{$s}- {
+        @include construct-declarations(margin, #{$side}, $halves, true);
+      }
+    }
+  } @else {
+    @each $side, $s in (top, t), (right, r), (bottom, b), (left, l), (x, x), (y, y) {
+      &#{$s}-#{$break} {
+        @include construct-declarations(margin, #{$side}, $halves, false);
+      }
+      &#{$s}-#{$break} {
+        @include construct-declarations(margin, #{$side}, $halves, true);
+      }
+    } 
+  }
+}
+
+// For each spacing  property, construct all classes for the given breakpoint
+@mixin construct-spacing-classes($break) {
+  @each $prop, $p in (margin, m), (padding, p) {
+    &#{$p} {
+      @include construct-sides($break);
+    }
+  }
+}
+
+// Construct all complete classes for a given breakpoint
+@mixin construct-classes-at-breakpoint($break) {
+  .x { 
+    @include construct-spacing-classes($break);
+
+    &mauto-#{$break} {
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
+    &minitial-#{$break} {
+      margin-right: initial !important;
+      margin-left: initial !important;
+    }
+    @if $break == xs {
+      // Display classes
+      &hide {
+        display: none;
+      }
+      &show {
+        display: block;
+      }
+      &show-ib {
+        display: inline-block;
+      }
+      &show-i {
+        display: inline;
+      }
+  
+      // Text align classes
+      &tal {
+        text-align: left;
+      }
+      &tar {
+        text-align: right;
+      }
+      &tac {
+        text-align: center;
+      }
+      &tai {
+        text-align: inherit;
+      }    
+
+      
+
+    } @else {
+      // Display classes
+      &hide-#{$break} {
+        display: none;
+      }
+      &show-#{$break} {
+        display: block;
+      }
+      &show-ib-#{$break} {
+        display: inline-block;
+      }
+      &show-i-#{$break} {
+        display: inline;
+      }
+    
+      // Text align classes
+      &tal-#{$break} {
+        text-align: left;
+      }
+      &tar-#{$break} {
+        text-align: right;
+      }
+      &tac-#{$break} {
+        text-align: center;
+      }
+      &tai-#{$break} {
+        text-align: inherit;
+      }
+    }
+  }
+}
+
+// Breakpoints are based on Bootstrap 4
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default (mobile-first)
+@include construct-classes-at-breakpoint(xs);
+@include construct-type-classes-at-breakpoint(xs);
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  @include construct-classes-at-breakpoint(sm);
+  @include construct-type-classes-at-breakpoint(sm);
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  @include construct-classes-at-breakpoint(md);
+  @include construct-type-classes-at-breakpoint(md);
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  @include construct-classes-at-breakpoint(lg);
+  @include construct-type-classes-at-breakpoint(lg);
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  @include construct-classes-at-breakpoint(xl);
+  @include construct-type-classes-at-breakpoint(xl);
+}

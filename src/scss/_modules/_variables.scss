@@ -1,0 +1,68 @@
+// Breakpoint Variables
+
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-sm-max: ($screen-md-min - 1);
+$screen-md-max: ($screen-lg-min - 1);
+$screen-lg-max: ($screen-xl-min - 1);
+
+// Unit Variables
+
+// The base unit of the pixel grid in use
+$base:          8px;
+
+// Variables for using grid unit multiples in stylesheets
+
+$x0u:           $base * 0.5 + px;
+$x1:            $base * 1 + px;
+$x1u:           $base * 1.5 + px;
+$x2:            $base * 2 + px;
+$x2u:           $base * 2.5 + px;
+$x3:            $base * 3 + px;
+$x3u:           $base * 3.5 + px;
+$x4:            $base * 4 + px;
+$x4u:           $base * 4.5 + px;
+$x5:            $base * 5 + px;
+$x5u:           $base * 5.5 + px;
+$x6:            $base * 6 + px;
+$x6u:           $base * 6.5 + px;
+$x7:            $base * 7 + px;
+$x7u:           $base * 7.5 + px;
+$x8:            $base * 8 + px;
+$x8u:           $base * 8.5 + px;
+$x9:            $base * 9 + px;
+$x10:           $base * 10 + px;
+$x11:           $base * 11 + px;
+$x12:           $base * 12 + px;
+$x13:           $base * 13 + px;
+$x14:           $base * 14 + px;
+$x15:           $base * 15 + px;
+$x16:           $base * 16 + px;
+$x17:           $base * 17 + px;
+$x18:           $base * 18 + px;
+$x19:           $base * 19 + px;
+$x20:           $base * 20 + px;
+$x21:           $base * 21 + px;
+$x22:           $base * 22 + px;
+$x23:           $base * 23 + px;
+$x24:           $base * 24 + px;
+$x25:           $base * 25 + px;
+$x26:           $base * 26 + px;
+$x27:           $base * 27 + px;
+$x28:           $base * 28 + px;
+$x29:           $base * 29 + px;
+$x30:           $base * 30 + px;
+$x31:           $base * 31 + px;
+$x32:           $base * 32 + px;
+$x33:           $base * 33 + px;
+$x34:           $base * 34 + px;
+$x35:           $base * 35 + px;
+$x36:           $base * 36 + px;
+$x37:           $base * 37 + px;
+$x38:           $base * 38 + px;
+$x39:           $base * 39 + px;
+$x40:           $base * 40 + px;

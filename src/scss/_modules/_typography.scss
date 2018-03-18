@@ -1,10 +1,8 @@
-
-
 // Icon Fonts
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 // **************************************************
-// Import these into SCSS for local style overriding
+// Import theste into SCSS for local style overriding
 // **************************************************
 
 @mixin style-tint-primary {
@@ -33,156 +31,136 @@
     font-family: monospace;
 }
 
-// **********************
-// Full Text Style Mixins
-// **********************
-
 // Font Tints
 // Set the values for primary, secondary, and disabled text styles
 @mixin font-tints {
     @include style-tint-primary;
     
-    &.secondary {
+    .secondary {
         @include style-tint-secondary;
     }
-    &.disabled {
+    .disabled {
         @include style-tint-disabled;
     }
-    &.white {
+    .white {
         @include style-tint-white;
     }
 }
 @mixin bold {
-    &.bold {
+    .bold {
         @include style-bold;
     }
 }
 @mixin uppercase {
-    &.uppercase {
+    .uppercase {
          @include style-uppercase;
     }
 }
 @mixin monospace {
-    &.monospace {
+    .monospace {
         @include style-monospace;
         @include bold;
     }
 }
+
 @mixin h1 {
-    margin-bottom: $x1;
-    
-    font-size: $x4_5;
-    line-height: $x4_5;
-    font-weight: 600;
-    
-    @include uppercase;
-    @include font-tints;
-    
-    @media screen and (min-width: $screen-sm-min) {
-        font-size: $x4_5;
-        line-height: $x4_5;
-    }
+  margin-bottom: $x1;
+  
+  font-size: $x4u;
+  line-height: $x4u;
+  font-weight: 600;
+  
+  @include uppercase;
+  @include font-tints;
+  
+  @media screen and (min-width: $screen-sm-min) {
+      font-size: $x4u;
+      line-height: $x4u;
+  }
 }
 @mixin h2 {
-    margin-bottom: $x1;
-    
-    font-size: $x3_5;
-    line-height: $x3_5;
-    font-weight: 600;
-    
-    @include uppercase;
-    @include font-tints;
-    
-    @media screen and (min-width: $screen-sm-min) {
-        font-size: $x3_5;
-        line-height: $x3_5;
-    }
+  margin-bottom: $x1;
+  
+  font-size: $x3u;
+  line-height: $x3u;
+  font-weight: 600;
+  
+  @include uppercase;
+  @include font-tints;
+  
+  @media screen and (min-width: $screen-sm-min) {
+      font-size: $x3u;
+      line-height: $x3u;
+  }
 }
 @mixin h3 {
-    font-size: $x3;
-    line-height: $x3;
-    font-weight: 600;
-    
-    @include uppercase;
-    @include font-tints;
+  font-size: $x3;
+  line-height: $x3;
+  font-weight: 600;
+  
+  @include uppercase;
+  @include font-tints;
 }
 @mixin h4 {
-    font-size: $x2_5;
-    line-height: $x2_5;
-    font-weight: 600;
-    
-    @include uppercase;
-    @include font-tints;
+  font-size: $x2u;
+  line-height: $x2u;
+  font-weight: 600;
+  
+  @include uppercase;
+  @include font-tints;
 }
 @mixin h5 {
-    margin-bottom: 2px;
-    
-    font-size: $x2_5;
-    line-height: $x2_5;
-    font-weight: 400;
-    
-    @include bold;
-    @include uppercase;
-    @include font-tints;
-    
-    @media screen and (min-width: $screen-sm-min) {
-        margin-bottom: 8px;
-        
-        font-size: $x2_5;
-        line-height: $x2_5;
-    }
+  margin-bottom: 2px;
+  
+  font-size: $x2u;
+  line-height: $x2u;
+  font-weight: 400;
+  
+  @include bold;
+  @include uppercase;
+  @include font-tints;
+  
+  @media screen and (min-width: $screen-sm-min) {
+      margin-bottom: 8px;
+      
+      font-size: $x2u;
+      line-height: $x2u;
+  }
 }
 @mixin body {
-    font-size: $x2;
-    line-height: $x3;
-    
-    @include bold;
-    @include uppercase;
-    @include font-tints;
+  font-size: $x2;
+  line-height: $x3;
+  
+  @include bold;
+  @include uppercase;
+  @include font-tints;
 }
 @mixin caption {
-    font-size: 14px;
-    line-height: $x2;
-    
-    @include bold;
-    @include uppercase;
-    @include font-tints;
+  font-size: 14px;
+  line-height: $x2;
+  
+  @include bold;
+  @include uppercase;
+  @include font-tints;
 }
 @mixin small {
-    font-size: $x1_5;
-    line-height: $x1_5;
-    
-    @include bold;
-    @include uppercase;
-    @include font-tints;
+  font-size: $x1u;
+  line-height: $x1u;
+  
+  @include bold;
+  @include uppercase;
+  @include font-tints;
 }
 
-// Creates helpers for every style at a single screen size
-@mixin text-style-helper($screen-size) {
-    h1, .h1#{$screen-size} { @include h1; }
-    h2, .h2#{$screen-size} { @include h2; }
-    h3, .h3#{$screen-size} { @include h3; }
-    h4, .h4#{$screen-size} { @include h4; }
-    h5, .h5#{$screen-size} { @include h5; }
-    .body#{$screen-size} { @include body; }
-    .caption#{$screen-size} { @include caption; }
-    .small#{$screen-size} { @include small; }
-}
+// Typography Classes
 
-
-// Final Output: Create helpers for every screen size within their media query
-
-// This line adds support for text classes without a screen size.
-@include text-style-helper(null);
-
-@include text-style-helper(-xs);
-
-@media screen and (min-width: $screen-sm-min) {
-    @include text-style-helper(-sm)
-}
-@media screen and (min-width: $screen-md-min) {
-    @include text-style-helper(-md)
-}
-@media screen and (min-width: $screen-lg-min) {
-    @include text-style-helper(-lg)
+@mixin construct-type-classes-at-breakpoint($break) {
+  h1, .h1-#{$break} { @include h1 }
+  h2, .h2-#{$break} { @include h2 }
+  h3, .h3-#{$break} { @include h3 }
+  h4, .h4-#{$break} { @include h4 }
+  h5, .h5-#{$break} { @include h5 }
+  .body-#{$break} { @include body }
+  .caption-#{$break} { @include caption }
+  .small-#{$break} { @include small }
 }
