@@ -1,7 +1,7 @@
 // Construct declaration for each grid multiple for the given prop and side
 @mixin construct-declarations($prop, $side, $make-halves) {
   @if $make-halves == true {
-    @for $i from 1 to 10 {
+    @for $i from 1 to 41 {
       &#{$i}u {
         @if $side == 'y' {
           #{$prop}-top: ($i * $base) + ($base * 0.5) !important;
