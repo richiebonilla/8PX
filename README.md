@@ -10,20 +10,28 @@ Use .show-* and .hide-* to control the display property of an element at a given
 - .hide-xs will hide the element at all breakpoints, but changing it to .hide-sm will only hide it at the 'small' breakpoint and up.
 
 Use the margin and padding classes to add box model properties in multiples of 8px.
-- .mt-xs3     // margin-top: 24px; at all breakpoints
-- .pb-xs4     // padding-bottom: 32px; at all breakpoints
-- .mx-xs5     // margin-left: 40px; margin-right: 40px; at all breakpoints
+```
+.mt-xs3     // margin-top: 24px; at all breakpoints
+.pb-xs4     // padding-bottom: 32px; at all breakpoints
+.mx-xs5     // margin-left: 40px; margin-right: 40px; at all breakpoints
+```
 
 Use the 'u' suffix to increment by 4px instead of 8px
-- .mt-xs3     // margin-top: 24px; at all breakpoints
-- .mt-xs3u    // margin top: 28px; at all breakpoints
+```
+.mt-xs3     // margin-top: 24px; at all breakpoints
+.mt-xs3u    // margin top: 28px; at all breakpoints
+```
 
 Add breakpoints to the classes to add responsive margins and paddings
-- .mr-sm3     // margin-right: 24px; for breakpoints 'sm' and up
+```
+.mr-sm3     // margin-right: 24px; for breakpoints 'sm' and up
+```
 
 The same values used at the end of classes can be used as variables in your SASS code to represent pixel values. This means you don't have to convert your grid values (4 grid spaces) to pixel values (32px) mentally if you want to use them in stylesheets.
-- $x10        // 80px
-- $x10u       // 84px
+```
+$x10        // 80px
+$x10u       // 84px
+```
 
 # Full List of Available Classes
 *[bracketed] denotes available options for that spot in the class.*
