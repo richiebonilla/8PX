@@ -1,4 +1,4 @@
-Mini CSS Library that provides helper classes for spacing, sizing, and displaying elements according to Bootstrap 4's breakpoints without writing any repetitive CSS.
+SCSS Utility Library that provides utility classes for spacing and displaying elements according to Bootstrap 4's breakpoints without writing any repetitive CSS.
 
 The library assumes that your wireframes are designed using an 8pt grid system, so all margin, padding, and text sizes are multiples of 4px.
 
